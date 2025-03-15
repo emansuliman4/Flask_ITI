@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block title %}All Books{% endblock %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h1 class="mb-4">All Books</h1>
+        {% if books %}
+            <ul class="list-group mb-4">
+            {% for book in books %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>{{ book.name }} by {{ book.author.name }}</span>
+                    <div>
+                        <a href="{{ url_for('book_details', book_id=book.id) }}" class="btn btn-sm btn-info me-2">Details</a>
+                        <form action="{{ url_for('delete_book', book_id=book.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="text-muted">No books available.</p>
+        {% endif %}
+        <a href="{{ url_for('add_book') }}" class="btn btn-primary">Add Book</a>
+    </div>
+{% endblock %}

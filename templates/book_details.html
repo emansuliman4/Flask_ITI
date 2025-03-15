@@ -1,0 +1,21 @@
+{% extends "base/base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-warning text-dark text-center">
+                <h2 class="mb-0">Book Details</h2>
+            </div>
+            <div class="card-body">
+                <p><strong>Name:</strong> {{ book.name }}</p>
+                <p><strong>Publish Date:</strong> {{ book.publish_date }}</p>
+                <p><strong>Price:</strong> {{ book.price }}</p>
+                <p><strong>Appropriate For:</strong> {{ book.appropriate }}</p>
+                <p><strong>Author:</strong> 
+                    <a href="{{ url_for('author_details', author_id=book.author_data.id) }}" class="text-decoration-none text-primary">
+                        {{ book.author_data.name }}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

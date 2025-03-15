@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{% block content %}
+    <div class="container mt-5">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0 text-center">Add a New Author</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" class="needs-validation" novalidate>
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">{{ form.name.label }}</label>
+                        {{ form.name(class="form-control") }}
+                    </div>
+                    <div class="text-center">
+                        {{ form.submit(class="btn btn-success px-5") }}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>You Have Been Logged Out</h1>
+        <p class="lead">You have successfully logged out of the Library application.</p>
+        <p>
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Log In Again</a>
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Return to Home</a>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Edit Book</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            <label for="name" class="form-label">{{ form.name.label }}</label>
+            {{ form.name(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            <label for="publish_date" class="form-label">{{ form.publish_date.label }}</label>
+            {{ form.publish_date(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">{{ form.price.label }}</label>
+            {{ form.price(class="form-control") }}
+        </div>
+        <div class="mb-3">
+            <label for="appropriate" class="form-label">{{ form.appropriate.label }}</label>
+            {{ form.appropriate(class="form-select") }}
+        </div>
+        <div class="mb-3">
+            <label for="author" class="form-label">{{ form.author.label }}</label>
+            {{ form.author(class="form-select") }}
+        </div>
+        <div class="text-center">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

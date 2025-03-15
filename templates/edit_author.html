@@ -1,0 +1,27 @@
+{% extends "base/base.html" %}
+{% block content %}
+<div class="container text-center">
+    <div class="row justify-content-center  min-vh-100">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <form method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="mb-3">
+                            {{ form.author_select.label(class="form-label") }}
+                            {{ form.author_select(class="form-control") }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form.new_name.label(class="form-label") }}
+                            {{ form.new_name(class="form-control") }}
+                        </div>
+                        <div class="d-grid">
+                            {{ form.submit(class="btn btn-primary") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

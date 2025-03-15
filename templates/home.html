@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="jumbotron text-center p-5 bg-light shadow rounded">
+        <h1 class="display-4">Welcome to the Library</h1>
+        <p class="lead">
+            {% if current_user.is_authenticated %}
+                Hello, <strong>{{ current_user.username }}</strong>! You can now view, create, or delete books.
+            {% else %}
+                Please <a href="{{ url_for('login') }}" class="btn btn-primary btn-sm">Log in</a> or
+                <a href="{{ url_for('register') }}" class="btn btn-secondary btn-sm">Register</a> to access the library.
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% endblock %}
